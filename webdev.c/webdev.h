@@ -32,5 +32,10 @@ else {
 }
 */
 
+void sys_log(int16 priority, int8 *msg);
+#define info_log(msg)       sys_log(LOG_INFO, msg)
+#define warning_log(msg)    sys_log(LOG_WARNING, msg)
+#define err_log(msg)        sys_log(LOG_ERR, msg)
+
 int32 setup_server(int8 *ip_address, int16 port);
 int main(int argc, char **argv);
